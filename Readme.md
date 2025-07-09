@@ -26,9 +26,7 @@
 ---
 
 🧰 **Project Structure**
-graphql
-Copy
-Edit
+
 DSAlyzer_withoutDocker/
 ├── agents/
 │   └── code_executor_agent.py    # Agent to execute Python code locally
