@@ -6,12 +6,13 @@
 
 ## 🚀 Features
 
-- 🧠 **AI-Powered DSA Problem Solver** — Ask DSA questions in plain English and get code + explanation.
-- 🔁 **Multi-Agent Collaboration** — Solver + Executor agents coordinate to generate and verify Python code.
-- ⚡ **Groq API Support** — Ultra-fast responses powered by LLaMA 3 on Groq infrastructure.
-- 🧪 **Live Code Execution** — Code is executed locally via Python subprocess and results shown in the chat.
-- 💡 **Clean UI with Streamlit** — Simple and responsive interface for a seamless experience.
-- 📂 **Code Persistence** — Executed code can be saved to local `.py` files by the agents.
+- 🧠 **AI-Powered DSA Problem Solver** -- Ask DSA questions in plain English and get code + explanation.
+- 🔁 **Multi-Agent Collaboration** -- Solver + Executor agents coordinate to generate and verify Python code.
+- ⚡ **Groq API Support** -- Ultra-fast responses powered by LLaMA 3 on Groq infrastructure.
+- 🧪 **Live Code Execution**-- Code is executed locally via Python subprocess and results shown in the chat.
+- 💡 **Clean UI with Streamlit** -- Simple and responsive interface for a seamless experience.
+- 📂 **Code Persistence** -- Executed code can be saved to local `.py` files by the agents.
+- 🐳 **Docker Support** -- To isolate code enviornment
 
 ---
 
@@ -26,18 +27,26 @@
 ---
 
 🧰 **Project Structure**
-
+```
 DSAlyzer_withoutDocker/
-├── agents/
-│   └── code_executor_agent.py    # Agent to execute Python code locally
-├── config/
-│   ├── constant.py               # Model ID and constants
-│   └── .env                      # Your Groq API key
-├── app.py                        # Streamlit frontend
-├── main.py                       # CLI entry point (optional)
-├── team.py                       # Team config with RoundRobin group chat
-├── requirements.txt              # Dependencies
-└── README.md                     # This file
+│
+├── .env                          # 🔐 Environment variables (Groq API key)
+├── .gitignore                   # 🚫 Git ignored files
+├── app.py                       # 🖥️ Streamlit frontend
+├── main.py                      # 🛠️ CLI entry point (optional)
+├── requirements.txt             # 📦 Python dependencies
+│
+├── agents/                      # 🤖 AI Agent definitions
+│   ├── code_executor_agent.py   # Executes code using LocalCommandLineExecutor
+│   ├── problem_solver.py        # Problem-solving agent logic
+│
+├── config/                      # ⚙️ Configuration settings
+│   ├── constant.py              # Model constants and metadata
+│   ├── settings.py              # Model Definition
+│   ├── docker_utils.py          # Docker helpers 
+│   ├── docker_executor.py       # Docker code executor
+│
+└── team.py                      # 👥 RoundRobinGroupChat team config
 
 **Live Demo**
 https://dsanalyzer.onrender.com/
